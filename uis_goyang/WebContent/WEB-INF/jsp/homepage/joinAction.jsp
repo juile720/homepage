@@ -7,8 +7,8 @@
 <jsp:setProperty name="user" property="userID" />
 <jsp:setProperty name="user" property="userPassword" />
 <jsp:setProperty name="user" property="userName" />
-<jsp:setProperty name="user" property="userGender" />
 <jsp:setProperty name="user" property="userEmail" />
+<jsp:setProperty name="user" property="chk_agree" />
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,21 +22,28 @@
 		if(session.getAttribute("userID") != null){
 			userID = (String) session.getAttribute("userID");
 		}
-		if(userID != null){
+		/* if(userID != null){
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
 			script.println("alert('이미 로그인이 되어있습니다.')");
 			script.println("history.back()");
 			script.println("</script>");
+		} */
+		if(user.getUserID() != null && user.getUserPassword() != null && user.getUserName() != null && user.getUserEmail() != null && user.getchk_agree() == null){
+			PrintWriter script = response.getWriter();
+			script.println("<script>");
+			script.println("alert('개인정보 수집 및 이용동의를 체크해주세요.')");
+			script.println("history.back()");
+			script.println("</script>");
 		}
-		if(user.getUserID() == null || user.getUserPassword() == null || user.getUserName() == null || user.getUserGender() == null || user.getUserEmail() == null) {
+		if(user.getUserID() == null || user.getUserPassword() == null || user.getUserName() == null || user.getUserEmail() == null) {
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
 			script.println("alert('입력이 안 된 사항이 있습니다.')");
 			script.println("history.back()");
-			
 			script.println("</script>");
-		} else{
+		}
+		 else{
 			UserDAO userDAO = new UserDAO();
 			int result = userDAO.join(user);
 			if (result == -1){
@@ -45,8 +52,7 @@
 				script.println("alert('이미 존재하는 아이디입니다.')");
 				script.println("history.back()");
 				script.println("</script>");
-			}
-			else{
+			} else{
 				session.setAttribute("userID", user.getUserID());
 				PrintWriter script = response.getWriter();
 				script.println("<script>");

@@ -1,0 +1,46 @@
+body {
+    background-image: url("../images/back.PNG");
+    background-repeat: repeat;
+    width: 1700px;
+    margin: 50px auto;
+}
+
+#logo {
+	margin-left : -50px;
+	margin-bottom : 150px;
+}
+
+.listBar {
+    display: inline;
+    float: left;
+    border: 2px solid gray;
+    border-radius: 10px;
+    margin: 50px;
+    margin-right : 200px;
+    padding: 10px;
+    padding-top: 0px;
+    background-color: white;
+    box-shadow: 1px 1px 2px gray;
+}
+
+.listBar ul {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+
+    
+}
+
+.listBar ul li {
+    margin: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.inputLink {
+    margin: 50px;
+}
+

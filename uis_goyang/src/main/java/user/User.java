@@ -5,8 +5,8 @@ public class User {
 	private String userID;
 	private String userPassword;
 	private String userName;
-	private String userGender;
 	private String userEmail;
+	private String chk_agree;
 	public String getUserID() {
 		return userID;
 	}
@@ -25,17 +25,18 @@ public class User {
 	public void setUserName(String userName) {
 		this.userName = userName;
 	}
-	public String getUserGender() {
-		return userGender;
-	}
-	public void setUserGender(String userGender) {
-		this.userGender = userGender;
-	}
 	public String getUserEmail() {
 		return userEmail;
 	}
 	public void setUserEmail(String userEmail) {
 		this.userEmail = userEmail;
+	}
+	
+	public String getchk_agree() {
+		return chk_agree;
+	}
+	public void setchk_agree(String chk_agree) {
+		this.chk_agree = chk_agree;
 	}
 	
 	

@@ -35,7 +35,7 @@
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#team">Team</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="logoutAction.do">Logout</a></li>
                         <ul class="nav-item">
-                        	<li class="nav-link js-scroll-trigger"><a href="vsearch_example02.do">search</a></li>
+                        	<li class="nav-link js-scroll-trigger"><a href="kakaoMap.do">search</a></li>
                         </ul>
                         <!-- <ul class="nav-item">
                         	<li class="nav-link js-scroll-trigger"><a href="login.do">login</a></li>

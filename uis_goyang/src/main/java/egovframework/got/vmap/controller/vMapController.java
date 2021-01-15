@@ -369,6 +369,13 @@ public class vMapController {
 	 * @throws Exception
 	 */
 	
+	
+	//kakaoMap호출
+	@RequestMapping(value="/kakaoMap.do")  
+	protected String kakaoMap(ModelMap model) throws Exception {		
+		
+		return "/../homepage/kakaoMap"; 
+	}
 	//joinAction호출
 			@RequestMapping(value="/joinAction.do")  
 			protected String joinAction(ModelMap model) throws Exception {		
