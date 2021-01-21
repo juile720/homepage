@@ -15,29 +15,32 @@ public class UserDAO {
 	public UserDAO() {
 		try {
 			Class.forName(driver);
-			String dbURL= "jdbc:mariadb://localhost:3306/bbs";
+			String dbURL= "jdbc:mariadb://10.1.0.37:3307/homepage";
+			String dbID= "jean";
+			String dbPassword="qwe123!@#";
+			
+			/*String dbURL= "jdbc:mariadb://127.0.0.1:3306/bbs";
 			String dbID= "root";
-			String dbPassword="tltmxpa123";
-			//Class.forName("org.mariadb.jdbc.Driver");
+			String dbPassword="tltmxpa123";*/
+			
+			Class.forName("org.mariadb.jdbc.Driver");
 			conn = DriverManager.getConnection(dbURL, dbID, dbPassword);
-					
-		} 
-		
-            catch(Exception e) {
-			e.printStackTrace();
+		}
+        catch(Exception e) {
+        e.printStackTrace();
 		}
 	}
 
 	public int login(String userID, String userPassword) {
-		String SQL = "SELECT userPassword FROM USER WHERE userID = ?";
+		String SQL = "SELECT userPassword FROM user WHERE userID = ?";
 		try {
 			pstmt = conn.prepareStatement(SQL);
 			pstmt.setString(1,  userID);
 			rs = pstmt.executeQuery();
 			if (rs.next()) {
-				if(rs.getString(1).equals(userPassword))
+				if(rs.getString(1).equals(userPassword)) {
 					return 1; //로그인 성공
-				else
+				}else
 					return 0; //비밀번호 불일치
 			}
 			return -1; // 아이디가 없음
@@ -48,7 +51,7 @@ public class UserDAO {
 	}
 	
 	public int join(User user) {
-		String SQL = "INSERT INTO USER VALUES (?, ?, ?, ?, ?)";
+		String SQL = "INSERT INTO user VALUES (?, ?, ?, ?, ?)";
 		try {
 			pstmt = conn.prepareStatement(SQL);
 			pstmt.setString(1, user.getUserID());
@@ -60,6 +63,7 @@ public class UserDAO {
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
+		
 		return -1; //데이터베이스 오류
 	}
 }

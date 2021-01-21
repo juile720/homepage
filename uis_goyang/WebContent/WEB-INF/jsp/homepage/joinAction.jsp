@@ -29,13 +29,6 @@
 			script.println("history.back()");
 			script.println("</script>");
 		} */
-		/* if(user.getUserID() != null && user.getUserPassword() != null && user.getUserName() != null && user.getUserEmail() != null && user.getchk_agree() == null){
-			PrintWriter script = response.getWriter();
-			script.println("<script>");
-			script.println("alert('개인정보 수집 및 이용동의를 체크해주세요.')");
-			script.println("history.back()");
-			script.println("</script>");
-		} */
 		if(user.getUserID() == null || user.getUserPassword() == null || user.getUserName() == null || user.getUserEmail() == null) {
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
@@ -50,7 +43,7 @@
 			script.println("history.back()");
 			script.println("</script>");
 		}
-		
+		//
 		 else{
 			UserDAO userDAO = new UserDAO();
 			int result = userDAO.join(user);
