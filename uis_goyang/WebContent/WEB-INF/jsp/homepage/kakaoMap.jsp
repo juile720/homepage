@@ -9,20 +9,18 @@
 </head>
 <body>
 	<div id="logo">
-		<a class="navbar-brand js-scroll-trigger" href="loginON.do"><img src="assets/img/navbar-logo.svg" alt="" width="200px"/></a>
+		<a class="navbar-brand js-scroll-trigger" href="loginON.do"><img src="assets/img/homepageLOGO1.png" alt="" width="200px"/></a>
 	</div>
 	<div class="listBar">
 	<h3>List</h3>
         <ul>
-            <li><a href="#" id="SL" onclick="List('선릉역')">선릉역</a></li>
-            <li><a href="#" id="SW" onclick="List('수원역')">수원역</a></li>
-            <li><a href="#" id="HS" onclick="List('화서역')">화서역</a></li>
+            <li><a href="#" id="SL" onclick="List('EAN빌딩')">EAN빌딩</a></li>
+            <!-- <li><a href="#" id="SW" onclick="List('수원역')">수원역</a></li>
+            <li><a href="#" id="HS" onclick="List('화서역')">화서역</a></li> -->
         </ul>
     </div>
 	<div id="map" style="width:1200px;height:700px;"></div>
-	<div id="inputLink">
-        hello<br>
-    </div>
+	<div id="inputLink"></div>
 	
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=d7797ebab266dab6c351344d61d9e7da&libraries=services"></script>
 <script>
@@ -44,18 +42,20 @@ var ps = new kakao.maps.services.Places();
 
 //20210113안지은 리스트이름 클릭시 지도 이동
 function List(str) {
-                if (str == "선릉역"){
-                	ps.keywordSearch('선릉역', placesSearchCB);
-                	string = "선릉역 3D모델링";
-                	document.querySelector("#inputLink").innerHTML = string.link("http://naver.com");                	
+                if (str == "EAN빌딩"){
+                	ps.keywordSearch('강남구 이에이엔테크놀로지', placesSearchCB);
+                	string = "EAN빌딩 3D모델링 링크";
+                	document.querySelector("#inputLink").innerHTML = string.link("/linkEX.do");                	
                 }
                 else if(str == "수원역"){
                 	ps.keywordSearch('수원역', placesSearchCB);
-                	document.querySelector("#inputLink").innerHTML = "수원";
+                	string = "수원역 3D모델링";
+                	document.querySelector("#inputLink").innerHTML = string.link("http://naver.com");
                 }
                 else if(str == "화서역"){
                 	ps.keywordSearch('화서역', placesSearchCB);
-                	document.querySelector("#inputLink").innerHTML = "화서";
+                	string = "화서역 3D모델링";
+                	document.querySelector("#inputLink").innerHTML = string.link("http://naver.com");
                 }
             }
 

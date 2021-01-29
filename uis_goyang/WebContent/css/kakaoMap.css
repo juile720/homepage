@@ -6,8 +6,8 @@ body {
 }
 
 #logo {
-	margin-left : -50px;
-	margin-bottom : 150px;
+	margin-left : 30px;
+	margin-bottom : 50px;
 }
 
 .listBar {
@@ -26,9 +26,7 @@ body {
 .listBar ul {
     list-style: none;
     margin: 0px;
-    padding: 0px;
-
-    
+    padding: 0px;    
 }
 
 .listBar ul li {
@@ -40,7 +38,11 @@ a {
     color: black;
 }
 
-.inputLink {
-    margin: 50px;
+#inputLink {
+    margin: 30px;
+	color: blue;
+	font-weight: bold ;
+	
 }
+
 

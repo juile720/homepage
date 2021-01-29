@@ -27,7 +27,7 @@ public class vMapController {
 	@Autowired
 	protected EgovPropertyService propertiesService;
 	
-	/**
+	/*
 	 * 브이월드 메인
 	 * @param model
 	 * @return
@@ -36,7 +36,7 @@ public class vMapController {
 	@RequestMapping(value="/vMap.do")  
 	protected String vMapClient(ModelMap model) throws Exception {		
 		
-		/**
+		/*
 		 * 브이월드 apikey 호출
 		 */
 		String vMapKey = propertiesService.getString("vMapKey");			
@@ -48,7 +48,7 @@ public class vMapController {
 		return "/map/vMap"; 
 	}
 	
-	/**
+	/*
 	 * 검색 API 화면 호출
 	 * @param commandMap
 	 * @param model
@@ -71,7 +71,7 @@ public class vMapController {
 	}
 	
 	
-	/**
+	/*
 	 * 검색API 검색결과
 	 * @param request
 	 * @param response
@@ -84,7 +84,7 @@ public class vMapController {
 	@RequestMapping(value="/vSearchL.do")  
 	protected String vPoiSearchL(HttpServletRequest request, HttpServletResponse response, Map<String, Object> commandMap, ModelMap model,
 			pagingVO vo) throws Exception {		
-		/**
+		/*
 		 * 페이징 셋팅
 		 */
 		vo.setPageUnit(propertiesService.getInt("pageUnit"));
@@ -107,7 +107,7 @@ public class vMapController {
 			start = paginationInfo.getFirstRecordIndex()+1;
 		}
 		
-		/**
+		/*
 		 * 브이월드 api명/키/페이징시작
 		 */
 		String vMapKey = propertiesService.getString("vMapKey");
@@ -115,7 +115,7 @@ public class vMapController {
 		
 		vMapSearch ss = new vMapSearch(category, vMapKey, start);
 		
-		/**
+		/*
 		 * 검색어생성
 		 */
 		String preSear = "";
@@ -130,7 +130,7 @@ public class vMapController {
 		m.put("LIST", list);
 		model.addAttribute("resultMAP", m);
 		
-		/**
+		/*
 		 * 총갯수
 		 */
 		int totCnt = 0;
@@ -162,7 +162,7 @@ public class vMapController {
 	}
 	
 	
-	/**
+	/*
 	 * 메인지도 네이버 지역명 검색
 	 * @param model
 	 * @return
@@ -174,7 +174,7 @@ public class vMapController {
 		return "/west/nLocal"; 
 	}
 	
-	/**
+	/*
 	 * 네이버 지역명 검색 결과
 	 * @param request
 	 * @param response
@@ -189,7 +189,7 @@ public class vMapController {
 	protected String nLocalList(HttpServletRequest request, HttpServletResponse response, Map<String, Object> commandMap, ModelMap model,
 			pagingVO vo) throws Exception {
 		
-		/**
+		/*
 		 * 페이징 셋팅
 		 */
 		vo.setPageUnit(propertiesService.getInt("pageUnit"));
@@ -207,13 +207,13 @@ public class vMapController {
 		
 		
 		int start = paginationInfo.getFirstRecordIndex()+1;
-		/**
+		/*
 		 * 네이버 api명/키/페이징시작
 		 */
 		String nMapkey = propertiesService.getString("nMapkey");
 		nMapSearch ns = new nMapSearch("local", nMapkey, start);
 		
-		/**
+		/*
 		 * 검색어생성
 		 */
 		String searValue = (String)commandMap.get("nNm");	
@@ -236,7 +236,7 @@ public class vMapController {
 		m.put("LIST2", list2);
 		model.addAttribute("resultMAP", m);
 		
-		/**
+		/*
 		 * 총갯수
 		 */
 		int totCnt = 0;
@@ -294,7 +294,7 @@ public class vMapController {
 		return "/map/dRoadView"; 
 	}
 	
-	/**
+	/*
 	 * vsearch_example01
 	 * @param model
 	 * @return
@@ -306,7 +306,7 @@ public class vMapController {
 		return "/example/search/vsearch_example01"; 
 	}
 	
-	/**
+	/*
 	 * 
 	 * @param request
 	 * @param response
@@ -320,7 +320,7 @@ public class vMapController {
 	protected String vsearch_example01_1(HttpServletRequest request, HttpServletResponse response, Map<String, Object> commandMap, ModelMap model,
 			pagingVO vo) throws Exception {
 		
-		/**
+		/*
 		 * 브이월드 api명/키/페이징시작
 		 */
 		String vMapKey = propertiesService.getString("vMapKey");
@@ -328,7 +328,7 @@ public class vMapController {
 		System.out.println("category == "+category);
 		vMapSearch ss = new vMapSearch(category, vMapKey, 1);
 		
-		/**
+		/*
 		 * 검색어생성
 		 */
 		String searValue = (String)commandMap.get("vNm");	
@@ -340,7 +340,7 @@ public class vMapController {
 		model.addAttribute("resultMAP", m);
 		model.addAttribute("category", category);
 		
-		/**
+		/*
 		 * 총갯수
 		 */
 		int totCnt = 0;
@@ -362,7 +362,7 @@ public class vMapController {
 		return "/example/search/vsearch_example01_1";
 	}
 	
-	/**
+	/*
 	 * vsearch_example02
 	 * @param model
 	 * @return
@@ -370,6 +370,12 @@ public class vMapController {
 	 */
 	
 	
+	//linkEX호출
+		@RequestMapping(value="/linkEX.do")  
+		protected String linkEX(ModelMap model) throws Exception {		
+			
+			return "/../homepage/linkEX"; 
+		}
 	//kakaoMap호출
 	@RequestMapping(value="/kakaoMap.do")  
 	protected String kakaoMap(ModelMap model) throws Exception {		
@@ -430,7 +436,7 @@ public class vMapController {
 	@RequestMapping(value="/vsearch_example02.do")  
 	protected String vsearch_example02(ModelMap model) throws Exception {		
 		
-		/**
+		/*
 		 * 브이월드 apikey 호출
 		 */
 		String vMapKey = propertiesService.getString("vMapKey");			
@@ -443,7 +449,7 @@ public class vMapController {
 	protected String vsearch_example02_1(HttpServletRequest request, HttpServletResponse response, Map<String, Object> commandMap, ModelMap model,
 			pagingVO vo) throws Exception {
 		
-		/**
+		/*
 		 * 브이월드 api명/키/페이징시작
 		 */
 		String vMapKey = propertiesService.getString("vMapKey");
@@ -451,7 +457,7 @@ public class vMapController {
 		System.out.println("category == "+category);
 		vMapSearch ss = new vMapSearch(category, vMapKey, 1);
 		
-		/**
+		/*
 		 * 검색어생성
 		 */
 		String searValue = (String)commandMap.get("vNm");	
@@ -463,7 +469,7 @@ public class vMapController {
 		model.addAttribute("resultMAP", m);
 		model.addAttribute("category", category);
 		
-		/**
+		/*
 		 * 총갯수
 		 */
 		int totCnt = 0;
@@ -488,7 +494,7 @@ public class vMapController {
 	@RequestMapping(value="/traffic_example01.do")  
 	protected String traffic_example01(ModelMap model) throws Exception {		
 		
-		/**
+		/*
 		 * 브이월드 apikey 호출
 		 */
 		String vMapKey = propertiesService.getString("vMapKey");			
@@ -500,7 +506,7 @@ public class vMapController {
 	@RequestMapping(value="/traffic_example02.do")  
 	protected String traffic_example02(ModelMap model) throws Exception {		
 		
-		/**
+		/*
 		 * 브이월드 apikey 호출
 		 */
 		String vMapKey = propertiesService.getString("vMapKey");			
@@ -512,7 +518,7 @@ public class vMapController {
 	@RequestMapping(value="/traffic_example03.do")  
 	protected String traffic_example03(ModelMap model) throws Exception {		
 		
-		/**
+		/*
 		 * 브이월드 apikey 호출
 		 */
 		String vMapKey = propertiesService.getString("vMapKey");			
@@ -524,7 +530,7 @@ public class vMapController {
 	@RequestMapping(value="/vnation_example01.do")  
 	protected String vnation_example01(ModelMap model) throws Exception {		
 		
-		/**
+		/*
 		 * 브이월드 apikey 호출
 		 */
 		String vMapKey = propertiesService.getString("vMapKey");			
@@ -536,7 +542,7 @@ public class vMapController {
 	@RequestMapping(value="/vnation_example02.do")  
 	protected String vnation_example02(ModelMap model) throws Exception {		
 		
-		/**
+		/*
 		 * 브이월드 apikey 호출
 		 */
 		String vMapKey = propertiesService.getString("vMapKey");			
@@ -571,7 +577,7 @@ public class vMapController {
 	@RequestMapping(value="/vnation_example03.do")  
 	protected String vnation_example03(ModelMap model) throws Exception {		
 		
-		/**
+		/*
 		 * 브이월드 apikey 호출
 		 */
 		String vMapKey = propertiesService.getString("vMapKey");			
@@ -606,7 +612,7 @@ public class vMapController {
 	@RequestMapping(value="/vbldginfo_example01.do")  
 	protected String vbldginfo_example01(ModelMap model) throws Exception {		
 		
-		/**
+		/*
 		 * 브이월드 apikey 호출
 		 */
 		String vMapKey = propertiesService.getString("vMapKey");			
@@ -627,13 +633,13 @@ public class vMapController {
 			) throws Exception {
 		
 		
-		/**
+		/*
 		 * 네이버 api명/키/페이징시작
 		 */
 		String nMapkey = propertiesService.getString("nMapkey");
 		nMapSearch ns = new nMapSearch("local", nMapkey, 1);
 		
-		/**
+		/*
 		 * 검색어생성
 		 */
 		String searValue = (String)commandMap.get("nNm");	
@@ -646,7 +652,7 @@ public class vMapController {
 		m.put("LIST", list);
 		model.addAttribute("resultMAP", m);
 		
-		/**
+		/*
 		 * 총갯수
 		 */
 		int totCnt = 0;
@@ -666,7 +672,7 @@ public class vMapController {
 	@RequestMapping(value="/nsearch_example02.do")  
 	protected String nsearch_example02(ModelMap model) throws Exception {		
 		
-		/**
+		/*
 		 * 브이월드 apikey 호출
 		 */
 		String vMapKey = propertiesService.getString("vMapKey");			
@@ -680,7 +686,7 @@ public class vMapController {
 	protected String nsearch_example02_1(HttpServletRequest request, HttpServletResponse response, Map<String, Object> commandMap, ModelMap model,
 			pagingVO vo) throws Exception {
 		
-		/**
+		/*
 		 * 페이징 셋팅
 		 */
 		vo.setPageUnit(propertiesService.getInt("pageUnit"));
@@ -698,13 +704,13 @@ public class vMapController {
 		
 		
 		int start = paginationInfo.getFirstRecordIndex()+1;
-		/**
+		/*
 		 * 네이버 api명/키/페이징시작
 		 */
 		String nMapkey = propertiesService.getString("nMapkey");
 		nMapSearch ns = new nMapSearch("local", nMapkey, start);
 		
-		/**
+		/*
 		 * 검색어생성
 		 */
 		String searValue = (String)commandMap.get("nNm");	
@@ -727,7 +733,7 @@ public class vMapController {
 		m.put("LIST2", list2);
 		model.addAttribute("resultMAP", m);
 		
-		/**
+		/*
 		 * 총갯수
 		 */
 		int totCnt = 0;
@@ -749,7 +755,7 @@ public class vMapController {
 	@RequestMapping(value="/nsearch_example03.do")  
 	protected String nsearch_example03(ModelMap model) throws Exception {		
 		
-		/**
+		/*
 		 * 브이월드 apikey 호출
 		 */
 		String vMapKey = propertiesService.getString("vMapKey");			
@@ -763,7 +769,7 @@ public class vMapController {
 	protected String nsearch_example03_1(HttpServletRequest request, HttpServletResponse response, Map<String, Object> commandMap, ModelMap model,
 			pagingVO vo) throws Exception {
 		
-		/**
+		/*
 		 * 페이징 셋팅
 		 */
 		vo.setPageUnit(propertiesService.getInt("pageUnit"));
@@ -781,13 +787,13 @@ public class vMapController {
 		
 		
 		int start = paginationInfo.getFirstRecordIndex()+1;
-		/**
+		/*
 		 * 네이버 api명/키/페이징시작
 		 */
 		String nMapkey = propertiesService.getString("nMapkey");
 		nMapSearch ns = new nMapSearch("local", nMapkey, start);
 		
-		/**
+		/*
 		 * 검색어생성
 		 */
 		String searValue = (String)commandMap.get("nNm");	
@@ -810,7 +816,7 @@ public class vMapController {
 		m.put("LIST2", list2);
 		model.addAttribute("resultMAP", m);
 		
-		/**
+		/*
 		 * 총갯수
 		 */
 		int totCnt = 0;
@@ -832,7 +838,7 @@ public class vMapController {
 	@RequestMapping(value="/dRoadView_example01.do")  
 	protected String dRoadView_example01(ModelMap model) throws Exception {		
 		
-		/**
+		/*
 		 * 브이월드 apikey 호출
 		 */
 		String vMapKey = propertiesService.getString("vMapKey");			
@@ -859,7 +865,7 @@ public class vMapController {
 	@RequestMapping(value="/vsearch_example03.do")  
 	protected String vsearch_example03(ModelMap model) throws Exception {		
 		
-		/**
+		/*
 		 * 브이월드 apikey 호출
 		 */
 		String vMapKey = propertiesService.getString("vMapKey");			
@@ -872,7 +878,7 @@ public class vMapController {
 	protected String vsearch_example03_1(HttpServletRequest request, HttpServletResponse response, Map<String, Object> commandMap, ModelMap model,
 			pagingVO vo) throws Exception {
 		
-		/**
+		/*
 		 * 브이월드 api명/키/페이징시작
 		 */
 		String vMapKey = propertiesService.getString("vMapKey");
@@ -880,7 +886,7 @@ public class vMapController {
 		System.out.println("category == "+category);
 		vMapSearch ss = new vMapSearch(category, vMapKey, 1);
 		
-		/**
+		/*
 		 * 검색어생성
 		 */
 		String searValue = (String)commandMap.get("vNm");	
@@ -892,7 +898,7 @@ public class vMapController {
 		model.addAttribute("resultMAP", m);
 		model.addAttribute("category", category);
 		
-		/**
+		/*
 		 * 총갯수
 		 */
 		int totCnt = 0;

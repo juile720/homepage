@@ -44,7 +44,7 @@ public class UserDAO {
 					return 0; //비밀번호 불일치
 			}
 			return -1; // 아이디가 없음
-		} catch (Exception e) {
+		} catch (Exception e) { 
 			e.printStackTrace();
 		}
 		return -2; // 데이터베이스 오류
