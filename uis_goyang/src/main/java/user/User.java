@@ -7,6 +7,7 @@ public class User {
 	private String userName;
 	private String userEmail;
 	private String chk_agree;
+	
 	public String getUserID() {
 		return userID;
 	}
@@ -31,14 +32,10 @@ public class User {
 	public void setUserEmail(String userEmail) {
 		this.userEmail = userEmail;
 	}
-	
 	public String getchk_agree() {
 		return chk_agree;
 	}
 	public void setchk_agree(String chk_agree) {
 		this.chk_agree = chk_agree;
 	}
-	
-	
-
 }

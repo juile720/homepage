@@ -29,10 +29,10 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ml-auto">
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#services">Services</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#team">Team</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="services.do">Services</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="portfolio.do">Portfolio</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="about.do">About</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="team.do">Team</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Login</a></li>
                         <!-- <ul class="nav-item">
                         	<li class="nav-link js-scroll-trigger"><a href="vsearch_example02.do">search</a></li>

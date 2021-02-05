@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Scanner;
 
 import egovframework.rte.fdl.property.EgovPropertyService;
 import egovframework.rte.ptl.mvc.tags.ui.pagination.PaginationInfo;
@@ -369,39 +370,96 @@ public class vMapController {
 	 * @throws Exception
 	 */
 	
+	//teamON호출
+	@RequestMapping(value="/teamON.do")  
+	protected String teamON(ModelMap model) throws Exception {		
+		
+		return "/../homepage/teamON"; 
+	}
+	
+	//team호출
+	@RequestMapping(value="/team.do")  
+	protected String team(ModelMap model) throws Exception {		
+		
+		return "/../homepage/team"; 
+	}
+			
+	//aboutON호출
+	@RequestMapping(value="/aboutON.do")  
+	protected String aboutON(ModelMap model) throws Exception {		
+		
+		return "/../homepage/aboutON"; 
+	}
+		
+	//about호출
+	@RequestMapping(value="/about.do")  
+	protected String about(ModelMap model) throws Exception {		
+		
+		return "/../homepage/about"; 
+	}
+	
+	//portfolioON호출
+	@RequestMapping(value="/portfolioON.do")  
+	protected String portfolioON(ModelMap model) throws Exception {		
+		
+		return "/../homepage/portfolioON"; 
+	}
+			
+	//portfolio호출
+	@RequestMapping(value="/portfolio.do")  
+	protected String portfolio(ModelMap model) throws Exception {		
+		
+		return "/../homepage/portfolio"; 
+	}
+	
+	//servicesON호출
+	@RequestMapping(value="/servicesON.do")  
+	protected String servicesON(ModelMap model) throws Exception {		
+		
+		return "/../homepage/servicesON"; 
+	}
+	
+	//services호출
+	@RequestMapping(value="/services.do")  
+	protected String services(ModelMap model) throws Exception {		
+		
+		return "/../homepage/services"; 
+	}
 	
 	//linkEX호출
-		@RequestMapping(value="/linkEX.do")  
-		protected String linkEX(ModelMap model) throws Exception {		
-			
-			return "/../homepage/linkEX"; 
-		}
+	@RequestMapping(value="/linkEX.do")  
+	protected String linkEX(ModelMap model) throws Exception {		
+		
+		return "/../homepage/linkEX"; 
+	}
+	
 	//kakaoMap호출
 	@RequestMapping(value="/kakaoMap.do")  
 	protected String kakaoMap(ModelMap model) throws Exception {		
 		
 		return "/../homepage/kakaoMap"; 
 	}
+	
 	//joinAction호출
-			@RequestMapping(value="/joinAction.do")  
-			protected String joinAction(ModelMap model) throws Exception {		
-				
-				return "/../homepage/joinAction"; 
-			}
+	@RequestMapping(value="/joinAction.do")  
+	protected String joinAction(ModelMap model) throws Exception {		
+		
+		return "/../homepage/joinAction"; 
+	}
 	
 	//logoutAction호출
-		@RequestMapping(value="/logoutAction.do")  
-		protected String logoutAction(ModelMap model) throws Exception {		
-			
-			return "/../homepage/logoutAction"; 
-		}
+	@RequestMapping(value="/logoutAction.do")  
+	protected String logoutAction(ModelMap model) throws Exception {		
+		
+		return "/../homepage/logoutAction"; 
+	}
 	
 	//loginON호출
-		@RequestMapping(value="/loginON.do")  
-		protected String loginON(ModelMap model) throws Exception {		
-			
-			return "/../homepage/loginON"; 
-		}
+	@RequestMapping(value="/loginON.do")  
+	protected String loginON(ModelMap model) throws Exception {		
+		
+		return "/../homepage/loginON"; 
+	}
 	
 	//loginAction호출
 	@RequestMapping(value="/loginAction.do")  
@@ -432,7 +490,6 @@ public class vMapController {
 	}
 	
 	//2D 지도 검색 화면 호출
-	
 	@RequestMapping(value="/vsearch_example02.do")  
 	protected String vsearch_example02(ModelMap model) throws Exception {		
 		
@@ -448,6 +505,7 @@ public class vMapController {
 	@RequestMapping(value="/vsearch_example02_1.do")  
 	protected String vsearch_example02_1(HttpServletRequest request, HttpServletResponse response, Map<String, Object> commandMap, ModelMap model,
 			pagingVO vo) throws Exception {
+			
 		
 		/*
 		 * 브이월드 api명/키/페이징시작
